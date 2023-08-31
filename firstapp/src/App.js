@@ -1,8 +1,63 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Card from './Card';
-import Btn from './Btn';
-import ModeToggler from './ModeToggler';
+// import Card from './Card';
+// import Btn from './Btn';
+// import ModeToggler from './ModeToggler';
+import Fruits from './Fruits';
+import FruitsCounter from './FruitsCounter';
+import React from 'react';
+
+
+
+
+
+
+
+function App() {
+  const [fruits] = React.useState([
+      {fruitName: 'apple', id: 1},
+      {fruitName: 'apple', id: 2},
+      {fruitName: 'plum', id: 3},
+  ]);
+
+  return (
+    <div className="App">
+      <h1>Where should the state go?</h1>
+      <Fruits fruits={fruits} />
+      <FruitsCounter fruits={fruits} />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -16,46 +71,46 @@ import ModeToggler from './ModeToggler';
 // export default App;
 
 
-function Main(props) { 
-  return <Header msg={props.msg} />; 
-};
+// function Main(props) { 
+//   return <Header msg={props.msg} />; 
+// };
 
-function Header(props) { 
-  return ( 
-    <div style={{ border: "10px solid whitesmoke" }}> 
-      <h1>Header here</h1> 
-      <Wrapper msg={props.msg} /> 
-    </div> 
-  ); 
-};
+// function Header(props) { 
+//   return ( 
+//     <div style={{ border: "10px solid whitesmoke" }}> 
+//       <h1>Header here</h1> 
+//       <Wrapper msg={props.msg} /> 
+//     </div> 
+//   ); 
+// };
 
-function Wrapper(props) { 
-  return ( 
-    <div style={{ border: "10px solid lightgray" }}> 
-      <h2>Wrapper here</h2> 
-      <Button msg={props.msg} /> 
-    </div> 
-  ); 
-};
+// function Wrapper(props) { 
+//   return ( 
+//     <div style={{ border: "10px solid lightgray" }}> 
+//       <h2>Wrapper here</h2> 
+//       <Button msg={props.msg} /> 
+//     </div> 
+//   ); 
+// };
 
-function Button(props) { 
-  return ( 
-    <div style={{ border: "20px solid orange" }}> 
-      <h3>This is the Button component</h3> 
-      <button onClick={() => alert(props.msg)}>Click me!</button> 
-    </div> 
-  ); 
-};
+// function Button(props) { 
+//   return ( 
+//     <div style={{ border: "20px solid orange" }}> 
+//       <h3>This is the Button component</h3> 
+//       <button onClick={() => alert(props.msg)}>Click me!</button> 
+//     </div> 
+//   ); 
+// };
 
-function App() { 
-  return ( 
-    <Main  
-      msg="I passed through the Header and the Wrapper and I reached the Button component"  
-    /> 
-  ); 
-}; 
+// function App() { 
+//   return ( 
+//     <Main  
+//       msg="I passed through the Header and the Wrapper and I reached the Button component"  
+//     /> 
+//   ); 
+// }; 
 
-export default App;
+// export default App;
 
 
 
