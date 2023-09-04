@@ -11,11 +11,51 @@ import Homepage from './Homepage';
 import AboutLittleLemon from './AboutLittleLemon';
 import {Routes, Route, Link} from 'react-router-dom';
 import logo from './assets/logo.png';
-
-
+import ReactPlayer from 'react-player/youtube';
+// import { useState } from 'react';
 
 
 function App() {
+
+const App = () => {
+  return (
+    <div>
+      <MyVideo />
+    </div>
+  );
+};
+
+const MyVideo = () => {
+  return (
+    <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
+  );
+};
+ const bird1 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/9/9b/Hydroprogne_caspia_-_Caspian_Tern_XC432679.mp3"
+  );
+
+  const bird2 = new Audio(
+    "https://upload.wikimedia.org/wikipedia/commons/b/b5/Hydroprogne_caspia_-_Caspian_Tern_XC432881.mp3"
+  );
+
+  function toggle1() {
+    if (bird1.paused) {
+      bird1.play();
+    } else {
+      bird1.pause();
+    }
+  };
+    function toggle2() {
+    if (bird2.paused) {
+      bird2.play();
+    } else {
+      bird2.pause();
+    }
+  };
+
+
+<App/>
+
   return (
     <div> 
 	  <nav>
@@ -28,12 +68,17 @@ function App() {
     <div className="logo">
       <img height={200} src={logo} alt="logo" />
     </div>
+      <div>
+      <button onClick={toggle1}>Caspian Tern 1</button>
+      <button onClick={toggle2}>Caspian Tern 2</button>
+    </div>
       <Routes> 
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/about" element={<AboutLittleLemon />}></Route>
       </Routes>
     </div>
+    
 
   );
 };
