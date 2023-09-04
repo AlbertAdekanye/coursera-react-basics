@@ -10,7 +10,7 @@ import Contact from './Contact';
 import Homepage from './Homepage';
 import AboutLittleLemon from './AboutLittleLemon';
 import {Routes, Route, Link} from 'react-router-dom';
-
+import logo from './assets/logo.png';
 
 
 
@@ -22,13 +22,19 @@ function App() {
       <Link to="/" className="nav-item">Homepage</Link>
       <Link to="/Contact" className="nav-item">Contact</Link>
       <Link to="/about" className="nav-item">About Little Lemon</Link>
+      
 	  </nav>
+
+    <div className="logo">
+      <img height={200} src={logo} alt="logo" />
+    </div>
       <Routes> 
         <Route path="/" element={<Homepage />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
         <Route path="/about" element={<AboutLittleLemon />}></Route>
       </Routes>
     </div>
+
   );
 };
 
